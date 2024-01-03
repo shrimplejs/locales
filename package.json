@@ -1,0 +1,25 @@
+{
+  "name": "shrimple-locales",
+  "version": "0.1.0",
+  "license": "LGPL-3.0-only",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "devDependencies": {
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
