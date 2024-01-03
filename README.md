@@ -52,5 +52,5 @@ foo(`${loc.get('salutes.hello')} ${loc.get('world')}`) // Hola Mundo
 - [x] Fallback locales
 - [x] Default locales
 - [x] Set locale
-- [] Make the package read files or a directory
+- [] Make the package read files or a directory  
 ... and more to come!
