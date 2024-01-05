@@ -778,6 +778,11 @@ shebang-regex@^3.0.0:
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
+shrimple-locales@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/shrimple-locales/-/shrimple-locales-0.1.2.tgz#5fb9550870d29326ff23b3c049537969dcc2425f"
+  integrity sha512-iDQcbUHzSWzez8pL02MIocNaDwOhWWkySng0NY8FSz9bFavpMyool1UyXOLiSfGsq+Qt9/7r4WVyqKSsuPwcYQ==
+
 signal-exit@^3.0.3:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
