@@ -9,6 +9,10 @@
     "type": "git",
     "url": "https://github.com/SrIzan10/shrimple-locales.git"
   },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
   "exports": {
     ".": {
       "require": "./dist/index.js",
