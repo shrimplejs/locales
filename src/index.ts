@@ -1,3 +1,4 @@
+import getAllLocales from './util/getAllLocales.js'
 import stringToJsonKey from './util/stringToJsonKey.js'
 import { JSONValue } from './util/types'
 
@@ -14,6 +15,10 @@ export class Localization {
         return stringToJsonKey(key, this.initLocales, lang || this.initOptions.defaultLocale, this.initOptions.fallbackLocale)
     }
 
+    localizationFor(key: string) {
+        return getAllLocales(key, this.initOptions.locales)
+    }
+
     changeLanguage(lang: string) {
         this.initOptions.defaultLocale = lang
     }
@@ -26,3 +31,4 @@ interface LocalizationOptions {
     defaultLocale: string;
     fallbackLocale: string;
 }
+
