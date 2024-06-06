@@ -14,7 +14,6 @@ export default function stringToJsonKey(key: string, obj: any, defaultLang: stri
                 if (value && keys[j] in value) {
                     value = value[keys[j]];
                 } else {
-                    // If the key is not found in the fallback language, return the original key or undefined based on handleInexistentKey
                     return key
                 }
             }
