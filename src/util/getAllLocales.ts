@@ -7,7 +7,6 @@ export default function getAllLocales(key: string, obj: any) {
         for (let i = 0; i < keys.length; i++) {
             if (value && keys[i] in value) {
                 value = value[keys[i]];
-                break;
             } else {
                 value = undefined;
                 break;

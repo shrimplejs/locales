@@ -11,3 +11,11 @@ export interface JSONObject {
 }
 
 export interface JSONArray extends Array<JSONValue> { }
+
+export interface LocalizationOptions {
+    locales: {
+        [lang: string]: JSONValue;
+    };
+    defaultLocale: string;
+    fallbackLocale: string;
+}
