@@ -1,9 +1,10 @@
 import { InterpolationObject } from "./types";
+import sanitizeText from "./sanitizeText";
 
 export default function replaceInterps(str: string, interp?: InterpolationObject) {
-    console.log(interp)
     for (const key in interp) {
-        str = str.replaceAll(`{{${key}}}`, interp[key] as string);
+        // sanitize the key to prevent XSS
+        str = str.replaceAll(`{{${key}}}`, sanitizeText(interp[key] as string));
     }
     return str;
 }
