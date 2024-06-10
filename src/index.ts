@@ -11,7 +11,7 @@ export class Localization {
         this.initLocales = JSON.parse(JSON.stringify(options.locales))
     }
 
-    get(key: string, interp?: InterpolationObject, lang?: string) {
+    t(key: string, interp?: InterpolationObject, lang?: string) {
         return stringToJsonKey(key, this.initLocales, lang || this.initOptions.defaultLocale, this.initOptions.fallbackLocale, interp)
     }
 
