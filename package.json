@@ -1,6 +1,6 @@
 {
   "name": "shrimple-locales",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "license": "LGPL-3.0-only",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
