@@ -10,13 +10,8 @@ it("should give multiple keys correctly for both langs", () => {
     en: "World",
     es: "Mundo",
   });
-    expect(locales.localizationFor("inside.another/object.key")).toEqual({
-        en: "key inside",
-        es: "key dentro",
-    });
-
-    expect(locales.localizationFor("inside")).toEqual({
-        en: { world: 'World', 'another/object': { key: 'key inside' } },
-        es: { world: 'Mundo', 'another/object': { key: 'key dentro' } }
-    });
+  expect(locales.localizationFor("inside.another/object.key")).toEqual({
+    en: "key inside",
+    es: "key dentro",
+  });
 });

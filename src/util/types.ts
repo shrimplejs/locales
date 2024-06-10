@@ -13,9 +13,20 @@ export interface JSONObject {
 export interface JSONArray extends Array<JSONValue> { }
 
 export interface LocalizationOptions {
-    locales: {
-        [lang: string]: JSONValue;
-    };
+    locales: Locales;
     defaultLocale: string;
     fallbackLocale: string;
 }
+
+export interface InterpolationObject {
+    [key: string]: string | (() => boolean) | undefined;
+    pluralChecker?: string | (() => boolean);
+}
+
+export type LocaleObject = {
+  [key: string]: string | LocaleObject;
+};
+
+export type Locales = {
+  [lang: string]: LocaleObject;
+};

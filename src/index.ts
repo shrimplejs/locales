@@ -1,6 +1,6 @@
 import getAllLocales from './util/getAllLocales.js'
 import stringToJsonKey from './util/stringToJsonKey.js'
-import { LocalizationOptions } from './util/types'
+import { InterpolationObject, LocalizationOptions } from './util/types'
 
 export class Localization {
     private initOptions: LocalizationOptions
@@ -11,8 +11,8 @@ export class Localization {
         this.initLocales = JSON.parse(JSON.stringify(options.locales))
     }
 
-    get(key: string, lang?: string) {
-        return stringToJsonKey(key, this.initLocales, lang || this.initOptions.defaultLocale, this.initOptions.fallbackLocale)
+    get(key: string, interp?: InterpolationObject, lang?: string) {
+        return stringToJsonKey(key, this.initLocales, lang || this.initOptions.defaultLocale, this.initOptions.fallbackLocale, interp)
     }
 
     localizationFor(key: string) {

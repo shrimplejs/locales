@@ -1,4 +1,4 @@
-import { Localization } from "../dist";
+import { Localization } from "./index";
 
 export const locales = new Localization({
     defaultLocale: 'en',
@@ -11,6 +11,9 @@ export const locales = new Localization({
                 'another/object': {
                     key: 'key inside'
                 }
+            },
+            interp: {
+                hello: 'Hello {{int}}'
             }
         },
         es: {
@@ -20,6 +23,9 @@ export const locales = new Localization({
                 'another/object': {
                     key: 'key dentro'
                 }
+            },
+            interp: {
+                hello: 'Hola {{int}}'
             }
         }
     }
