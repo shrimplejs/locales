@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { locales } from "../src/test.js";
+import { locales } from "../src/test";
 
 it("should return values with interpolations replaced", () => {
   expect(locales.t("interp.hello", { int: 'noway' }, 'en')).toBe("Hello noway");

@@ -1,3 +1,4 @@
+// The file is here because tsconfig is set to compile all files in src folder, and not the tests folder
 import { Localization } from "./index";
 
 export const locales = new Localization({

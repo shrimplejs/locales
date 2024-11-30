@@ -1,25 +1,33 @@
-import getAllLocales from './util/getAllLocales.js'
-import stringToJsonKey from './util/stringToJsonKey.js'
-import { InterpolationObject, LocalizationOptions } from './util/types'
+import getLocales from './util/getLocales';
+import { Interpolations, LocalizationOptions } from './util/types';
 
 export class Localization {
-    private initOptions: LocalizationOptions
-    private initLocales: LocalizationOptions['locales']
+  private initOptions: LocalizationOptions;
+  private initLocales: LocalizationOptions['locales'];
 
-    constructor(options: LocalizationOptions) {
-        this.initOptions = options
-        this.initLocales = JSON.parse(JSON.stringify(options.locales))
-    }
+  constructor(options: LocalizationOptions) {
+    this.initOptions = options;
+    this.initLocales = JSON.parse(JSON.stringify(options.locales));
+  }
 
-    t(key: string, interp?: InterpolationObject, lang = this.initOptions.defaultLocale) {
-        return stringToJsonKey(key, this.initLocales, lang, this.initOptions.fallbackLocale, interp)
-    }
+  t(key: string, interp?: Interpolations, lang = this.initOptions.defaultLocale) {
+    return getLocales({
+      key,
+      locales: this.initLocales,
+      defaultLang: lang,
+      fallbackLang: this.initOptions.fallbackLocale,
+      interpolations: interp,
+    }) as string;
+  }
 
-    localizationFor(key: string) {
-        return getAllLocales(key, this.initOptions.locales)
-    }
+  localizationFor(key: string) {
+    return getLocales({
+      key,
+      locales: this.initLocales,
+    }) as Record<string, string>;
+  }
 
-    changeLanguage(lang: string) {
-        this.initOptions.defaultLocale = lang
-    }
+  changeLanguage(lang: string) {
+    this.initOptions.defaultLocale = lang;
+  }
 }
