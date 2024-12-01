@@ -1,0 +1,130 @@
+/* Catppuccin Mocha theme for TypeDoc */
+
+:root {
+  --catppuccin-base: #1e1e2e;
+  --catppuccin-surface0: #313244;
+  --catppuccin-surface1: #45475a;
+  --catppuccin-surface2: #585b70;
+  --catppuccin-overlay0: #6c7086;
+  --catppuccin-overlay1: #7f849c;
+  --catppuccin-overlay2: #9399b2;
+  --catppuccin-subtext0: #a6adc8;
+  --catppuccin-subtext1: #bac2de;
+  --catppuccin-text: #cdd6f4;
+  --catppuccin-lavender: #b4befe;
+  --catppuccin-blue: #89b4fa;
+  --catppuccin-sapphire: #74c7ec;
+  --catppuccin-sky: #89dceb;
+  --catppuccin-teal: #94e2d5;
+  --catppuccin-green: #a6e3a1;
+  --catppuccin-yellow: #f9e2af;
+  --catppuccin-peach: #fab387;
+  --catppuccin-maroon: #eba0ac;
+  --catppuccin-red: #f38ba8;
+  --catppuccin-mauve: #cba6f7;
+  --catppuccin-pink: #f5c2e7;
+  --catppuccin-flamingo: #f2cdcd;
+  --catppuccin-rosewater: #f5e0dc;
+}
+
+body {
+  background-color: var(--catppuccin-base);
+  color: var(--catppuccin-text);
+}
+
+a {
+  color: var(--catppuccin-blue);
+}
+
+.tsd-page-toolbar {
+  background-color: var(--catppuccin-surface0);
+}
+
+.tsd-navigation {
+  background-color: var(--catppuccin-surface1);
+}
+
+.tsd-index-panel {
+  background-color: var(--catppuccin-surface0);
+}
+
+.tsd-kind-icon {
+  color: var(--catppuccin-lavender);
+}
+
+.tsd-flag {
+  background-color: var(--catppuccin-surface2);
+  color: var(--catppuccin-text);
+}
+
+.tsd-description {
+  color: var(--catppuccin-subtext0);
+}
+
+code {
+  background-color: var(--catppuccin-surface0);
+  color: var(--catppuccin-green);
+}
+
+pre {
+  background-color: var(--catppuccin-surface0);
+}
+
+.tsd-signature {
+  background-color: var(--catppuccin-surface1);
+}
+
+.tsd-type-parameters {
+  color: var(--catppuccin-pink);
+}
+
+.tsd-comment {
+  color: var(--catppuccin-overlay2);
+}
+
+.tsd-anchor-icon {
+  color: var(--catppuccin-sapphire);
+}
+
+.tsd-panel {
+  background-color: var(--catppuccin-base);
+}
+
+.tsd-navigation.secondary li.current > a {
+  color: var(--catppuccin-rosewater);
+}
+.tsd-navigation {
+  background-color: var(--catppuccin-base);
+}
+
+.tsd-page-title {
+  color: var(--catppuccin-lavender);
+}
+
+.tsd-breadcrumb a {
+  color: var(--catppuccin-blue);
+}
+
+.tsd-tag {
+  background-color: var(--catppuccin-surface2);
+  color: var(--catppuccin-text);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .tsd-top-button {
+    color: var(--catppuccin-text);
+  }
+
+  .tsd-accordion-summary {
+    background-color: var(--catppuccin-base);
+  }
+
+  .tsd-accordion-details {
+    background-color: var(--catppuccin-surface1);
+  }
+
+  .tsd-navigation.primary li.current > a {
+    color: var(--catppuccin-rosewater);
+  }
+}
