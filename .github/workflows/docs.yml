@@ -1,0 +1,54 @@
+name: Publish Typedoc to Github Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Fetch all history for all branches and tags
+      
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '21'
+          cache: 'npm'
+      
+      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+      
+      - run: corepack enable yarn
+      - run: yarn install --prefer-offline
+      
+      - name: Configure Git
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+      
+      - name: Create or switch to typedoc branch
+        run: |
+          git checkout typedoc || git checkout -b typedoc
+          git pull origin typedoc || true
+      
+      - name: Merge main into typedoc
+        run: |
+          git merge origin/main --allow-unrelated-histories -X theirs
+      
+      - name: Generate Typedoc
+        run: |
+          yarn typedoc:gen
+          curl -O https://gist.githubusercontent.com/j0nl1/7f9b5210c9e6ecbabe322baa16dcb5db/raw/760de77327bf83671cfb6bd4e64181299ba26113/typedoc-fix-cf.mjs
+          node typedoc-fix-cf.mjs docs
+      
+      - name: Commit and push changes
+        run: |
+          git add .
+          git diff --staged --quiet || git commit -m "Update typedoc to commit $(git rev-parse --short HEAD)"
+          git push origin typedoc

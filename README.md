@@ -2,6 +2,8 @@
 
 A zero-dependency (for the forseen future hopefully), typescript-ready, fast, lightweight and, of course, shrimple package to localize your projects.
 
+[docs](https://shrimple.js.org/locales/)
+
 # Getting started
 
 First get your locale files going. A json file is enough:

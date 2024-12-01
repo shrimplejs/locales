@@ -13,7 +13,10 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "test": "vitest --disable-console-intercept",
-    "format": "prettier --write ."
+    "ci:test": "vitest --disable-console-intercept --coverage",
+    "format": "prettier --write .",
+    "typedoc:gen": "yarn typedoc:fetchCatppuccin ; typedoc --customCss ./cpnmocha.css --out docs src ; rm ./cpnmocha.css",
+    "typedoc:fetchCatppuccin": "curl -o ./cpnmocha.css https://gist.githubusercontent.com/SrIzan10/c7d1f0a588f17a8245ff922e6c43118c/raw/498c727033324d175dc2bb14db3032f4de4f9f0b/cpnmocha.css"
   },
   "exports": {
     ".": {
@@ -29,11 +32,13 @@
     "package.json"
   ],
   "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.6",
     "prettier": "3.4.1",
     "shrimple-locales": "^0.2.0",
     "tsup": "^8.0.1",
+    "typedoc": "^0.27.2",
     "typescript": "^5.3.3",
-    "vitest": "^1.6.0"
+    "vitest": "^2.1.6"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
