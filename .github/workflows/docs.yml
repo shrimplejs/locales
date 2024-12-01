@@ -17,8 +17,8 @@ jobs:
       
       - uses: actions/setup-node@v2
         with:
-          node-version: '21'
-          cache: 'npm'
+          node-version: '20'
+          cache: 'yarn'
       
       - uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
