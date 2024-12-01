@@ -3,9 +3,9 @@ export default function sanitize(text: string): string {
     /[&<>]/g,
     (char) =>
       ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-      })[char] || char,
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+      })[char] || char
   );
 }

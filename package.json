@@ -12,7 +12,8 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "test": "vitest --disable-console-intercept"
+    "test": "vitest --disable-console-intercept",
+    "format": "prettier --write ."
   },
   "exports": {
     ".": {
@@ -28,6 +29,7 @@
     "package.json"
   ],
   "devDependencies": {
+    "prettier": "3.4.1",
     "shrimple-locales": "^0.2.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
