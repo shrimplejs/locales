@@ -1,5 +1,5 @@
 import { it, expect } from 'vitest';
-import { locales } from '../src/test';
+import { locales } from '../test';
 
 it('should give multiple keys correctly for both langs', () => {
   expect(locales.t('hello', {}, 'en')).toBe('Hello');
